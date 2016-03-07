@@ -14,6 +14,15 @@ class JobsController < ApplicationController
    redirect_to jobs_path
    end
     
+   def edit
+       @job = Job.find(params[:id])
+   end
+   
+    def update
+      @job = Job.find(params[:id])
+      @job.update_attributes(job_params)
+      redirect_to jobs_path
+    end
     
     
     private
